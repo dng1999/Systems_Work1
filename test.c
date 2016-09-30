@@ -45,6 +45,17 @@ char *myChr(char *s, char c){
   return NULL;
 }
 
+char *myStr(char *s, char *c){
+  int offset = 0;
+  while (*s){
+    if (*s != c) s++;
+    else {
+      
+    }
+  }
+  return NULL;
+}
+
 int main(){
   char Ys1[] = "Hello";
   char Ys2[20] = "";
@@ -52,7 +63,7 @@ int main(){
   char Cs1[] = "Hello";
   char Cs2[20] = "";
   /////////////////////////////////////////////////////////////////////
-
+  
   printf("Before applying functions:\n");
   printf("\tY|Ys1 = %s, length = %d\n", Ys1, myLen(Ys1));
   printf("\tC|Cs1 = %s, length = %zu\n\n", Cs1, strlen(Cs1));
@@ -74,7 +85,7 @@ int main(){
   printf("\tYs1 = %s, length = %d\n", Ys1, myLen(Ys1));
   printf("\tCs1 = %s, length = %zu\n\n", Cs1, strlen(Cs1));
 
-  printf("\nTesting mycmp:\n");
+  printf("\nTesting myCmp:\n");
   printf("\tmyCmp('ab','abc'): %d\n", myCmp("ab","abc"));
   printf("\tstrcmp('ab','abc'): %d\n\n", strcmp("ab","abc"));
 
@@ -87,12 +98,19 @@ int main(){
   printf("\tmyCmp('abc','abd'): %d\n", myCmp("abc","abd"));
   printf("\tstrcmp('abc','abd'): %d\n\n", strcmp("abc","abd"));
   
-  printf("\nTesting mychr:\n");
-  printf("\tmyChr('Hello123','1'): [%p]\n", myChr("Hello123",'1'));
-  printf("\tstrchr('Hello123','1'): [%p]\n\n", strchr("Hello123",'1'));
+  printf("\nTesting myChr:\n");
+  printf("\tmyChr('Hello123','1'): [%s]\n", myChr("Hello123",'1'));
+  printf("\tstrchr('Hello123','1'): [%s]\n\n", strchr("Hello123",'1'));
 
-  printf("\tmyChr('Hello123','0'): [%p]\n", myChr("Hello123",'0'));
-  printf("\tstrchr('Hello123','0'): [%p]\n\n", myChr("Hello123",'0'));
+  printf("\tmyChr('Hello123','0'): [%s]\n", myChr("Hello123",'0'));
+  printf("\tstrchr('Hello123','0'): [%s]\n\n", strchr("Hello123",'0'));
+  
+  printf("\nTesting myStr:\n");
+  printf("\tmyStr('Hello123','lo'): [%s]\n", myStr("Hello123","lo"));
+  printf("\tstrstr('Hello123','lo'): [%s]\n\n", strstr("Hello123","lo"));
 
+  printf("\tmyStr('Hello123','H20'): [%s]\n", myStr("Hello123","H20"));
+  printf("\tstrstr('Hello123','H20'): [%s]\n\n", strstr("Hello123","H20"));
+  
   return 0;
 }
