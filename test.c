@@ -50,7 +50,11 @@ char *myStr(char *s, char *c){
   while (*s){
     if (*s != c) s++;
     else {
-      
+      while (*s == c){
+	s++;
+	c++;
+	offset++;
+      }
     }
   }
   return NULL;
