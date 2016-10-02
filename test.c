@@ -46,17 +46,20 @@ char *myChr(char *s, char c){
 }
 
 char *myStr(char *s, char *c){
-  int offset = 0;
+  char *sPos = s;
+  char *cPos = c;
   while (*s){
-    if (*s != c) s++;
-    else {
-      while (*s == c){
-	s++;
-	c++;
-	offset++;
-      }
+    while (*c && *s && *s == *c){
+      s++;
+      c++;
     }
-  }
+    if (!*c){
+      return sPos;
+    }
+    sPos++;
+    s = sPos;
+    c = cPos;
+  } 
   return NULL;
 }
 
